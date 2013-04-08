@@ -2,6 +2,7 @@
 #pragma once
 
 #include "RequestResponse.h"
+#include "IContentFilterHandler.h"
 
 using namespace System;
 using namespace System::Net;
@@ -24,7 +25,7 @@ namespace CefSharp
     public:
         bool OnBeforeBrowse(IWebBrowser^ browser, IRequest^ request, NavigationType naigationvType, bool isRedirect);
         bool OnBeforeResourceLoad(IWebBrowser^ browser, IRequestResponse^ requestResponse);
-        void OnResourceResponse(IWebBrowser^ browser, String^ url, int status, String^ statusText, String^ mimeType, WebHeaderCollection^ headers);
+        void OnResourceResponse(IWebBrowser^ browser, String^ url, int status, String^ statusText, String^ mimeType, WebHeaderCollection^ headers, IContentFilterHandler ^% filterHandler);
         bool GetDownloadHandler(IWebBrowser^ browser, String^ mimeType, String^ fileName, Int64 contentLength, IDownloadHandler ^% handler);
         bool GetAuthCredentials(IWebBrowser^ browser, bool isProxy, String^ host ,int port, String^ realm, String^ scheme, String^% username, String^% password);
    };

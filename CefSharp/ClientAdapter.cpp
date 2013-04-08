@@ -11,6 +11,8 @@
 #include "IRequestHandler.h"
 #include "IMenuHandler.h"
 #include "IKeyboardHandler.h"
+#include "IContentFilterHandler.h"
+#include "ContentFilterAdapter.h"
 
 using namespace std;
 
@@ -283,13 +285,21 @@ namespace CefSharp
             }
         }
 
+		IContentFilterHandler^ filterHandler;
+
         handler->OnResourceResponse(
             _browserControl,
             toClr(url),
             response->GetStatus(),
             toClr(response->GetStatusText()),
             toClr(response->GetMimeType()),
-            headers);
+            headers,
+			filterHandler);
+
+		if (filterHandler) 
+		{
+			filter = new ContentFilterAdapter(filterHandler);
+		}
     }
 
     void ClientAdapter::OnContextCreated(CefRefPtr<CefBrowser> browser, CefRefPtr<CefFrame> frame, CefRefPtr<CefV8Context> context)
