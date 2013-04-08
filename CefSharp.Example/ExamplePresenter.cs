@@ -278,7 +278,7 @@ namespace CefSharp.Example
             return false;
         }
 
-        void IRequestHandler.OnResourceResponse(IWebBrowser browser, string url, int status, string statusText, string mimeType, WebHeaderCollection headers)
+        void IRequestHandler.OnResourceResponse(IWebBrowser browser, string url, int status, string statusText, string mimeType, WebHeaderCollection headers, ref IContentFilterHandler filterHandler)
         {
 
         }

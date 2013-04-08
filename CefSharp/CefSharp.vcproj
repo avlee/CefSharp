@@ -209,6 +209,10 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ContentFilterAdapter.cpp"
+				>
+			</File>
+			<File
 				RelativePath=".\CookieVisitor.cpp"
 				>
 			</File>
@@ -299,11 +303,19 @@
 				>
 			</File>
 			<File
+				RelativePath=".\ContentFilterAdapter.h"
+				>
+			</File>
+			<File
 				RelativePath=".\CookieVisitor.h"
 				>
 			</File>
 			<File
 				RelativePath=".\DownloadAdapter.h"
+				>
+			</File>
+			<File
+				RelativePath=".\IContentFilterHandler.h"
 				>
 			</File>
 			<File
