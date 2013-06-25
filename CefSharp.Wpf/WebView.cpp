@@ -468,6 +468,19 @@ namespace Wpf
         }
     }
 
+	String^ WebView::GetSource()
+	{
+		_browserCore->CheckBrowserInitialization();
+
+        CefRefPtr<CefBrowser> browser;
+        if (TryGetCefBrowser(browser))
+        {
+			return toClr(browser->GetMainFrame()->GetSource());
+        }
+
+		return nullptr;
+	}
+
     void WebView::Undo()
     {
         _browserCore->CheckBrowserInitialization();

@@ -238,6 +238,7 @@ namespace Wpf
         virtual void ClearHistory();
         virtual void ShowDevTools();
         virtual void CloseDevTools();
+		virtual String^ GetSource();
 
         virtual void Undo();
         virtual void Redo();

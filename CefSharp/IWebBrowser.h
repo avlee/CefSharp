@@ -51,6 +51,7 @@ namespace CefSharp
         void ClearHistory();
         void ShowDevTools();
         void CloseDevTools();
+		String^ GetSource();
 
         void Undo();
         void Redo();
